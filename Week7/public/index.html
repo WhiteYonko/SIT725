@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <meta name="description" content="A car information website">
+    <meta name="keywords" content="cars, automotive, materialize">
+    <meta name="author" content="Your Name">
+    <title>TokyoDrive</title>
+    <style>
+        .card-image img {
+          height: 200px;
+          object-fit: cover;
+        }
+    
+        .card-content {
+          min-height: 150px;
+        }
+        body {
+            background-image: url('background.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center center; 
+            background-attachment: fixed; 
+        }
+
+        .container {
+            padding-top: 20px;
+        }
+      </style>
+</head>
+
+<body>
+
+  
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">
+                <img src="logo.png" alt="Logo" style="height: 50px; vertical-align: middle;"> TokyoDrive
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="sample-1.jpg" alt="Card image 1">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title"><strong>Mitsubishi Lancer Evolution</strong></span>
+                        <p>This is a Mitsubishi Lancer Evolution, a car known for its impressive performance and rally history.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#modal1" class="modal-trigger">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="sample-2.jpg" alt="Card image 2">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title"><strong>Nissan Skyline GTR</strong></span>
+                        <p>This is a Nissan Skyline GT-R, one of Japan's most iconic sports cars.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#modal2" class="modal-trigger">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="sample-3.jpg" alt="Card image 3">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title"><strong>Toyota Supra</strong></span>
+                        <p>This is a Toyota Supra, a legendary Japanese sports car with a strong fan base.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#modal3" class="modal-trigger">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Mitsubishi Lancer Evolution</h4>
+            <p>The Mitsubishi Lancer Evolution, also known as Evo, is a sports sedan that was produced by Mitsubishi Motors from 1992 until 2016. It is famous for its participation in the World Rally Championship (WRC).</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Nissan Skyline GT-R</h4>
+            <p>The Nissan Skyline GT-R is a high-performance sports car produced by Nissan, renowned for its success in motorsports and popular culture.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4>Toyota Supra</h4>
+            <p>The Toyota Supra is a sports car/grand tourer produced by Toyota Motor Corporation, known for its performance, especially in car modification culture.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">Submit Your Information</span>
+                <form id="infoForm">
+                  <div class="input-field">
+                    <input id="name" type="text" class="validate" required>
+                    <label for="name">Name</label>
+                  </div>
+                  <div class="input-field">
+                    <input id="email" type="email" class="validate" required>
+                    <label for="email">Email</label>
+                  </div>
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+                </form>
+              </div>
+              <div class="card-action">
+                <span id="responseMessage" style="display: none;">Thank you for submitting your information!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+          
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tap-target');
+    var instances = M.TapTarget.init(elems, options);
+});
+
+$(document).ready(function(){
+    $('.tap-target').tapTarget();
+});
+</script>
+
+</body>
+</html>
