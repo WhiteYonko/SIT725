@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Card with Modals</title>
+    <script>
+        $(document).ready(function(){
+            $("#ajaxButton").click(function(){
+                $.ajax({
+                    url: "/getCardContent",
+                    type: "GET",
+                    success: function(data) {
+                        $("#ajaxContent").html(data);
+                    },
+                    error: function() {
+                        $("#ajaxContent").html("An error occurred while loading content.");
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-image: url('images/background.png');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">IcyBite</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Home</a></li>
+                <li><a href="badges.html">Our Products</a></li>
+                <li><a href="collapsible.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/sample-1.png" alt="Sample Image 1">
+                </div>
+                <div class="card-content">
+                    <p>Smooth vanilla</p>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/sample-2.png" alt="Sample Image 2">
+                </div>
+                <div class="card-content">
+                    <p>Triple Scooper</p>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/sample-3.png" alt="Sample Image 3">
+                </div>
+                <div class="card-content">
+                    <p>Icy Bluecurrant</p>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal3">More Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Smooth Vanilla</h4>
+            <p>Smooth Vanilla delivers a classic, creamy flavor with rich, velvety texture, offering a timeless, indulgent treat in every scoop.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Triple Scooper</h4>
+            <p>"Indulge in our signature  three scoops of bliss: rich chocolate, smooth vanilla, and refreshing cool raspberry for the ultimate flavor experience.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4>Icy Bluecurrant</h4>
+            <p>Icy Bluecurrant offers a refreshing burst of tangy sweetness, perfectly balancing fruity and cool flavors in every delightful scoop.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title"><strong>Ice Cream Facts</strong></span>
+                    <p id="ajaxContent">Fun Fact About Ice Cream.</p>
+                </div>
+                <div class="card-action">
+                    <button id="ajaxButton" class="waves-effect waves-light btn">Fact Of the Day</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Fill Your Details</span>
+                            <form id="userForm">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="name" type="text" class="validate" required>
+                                        <label for="name">Name</label>
+                                    </div>
+    
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">phone</i>
+                                        <input id="phone" type="tel" class="validate" required>
+                                        <label for="phone">Phone Number</label>
+                                    </div>
+    
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">email</i>
+                                        <input id="email" type="email" class="validate" required>
+                                        <label for="email">Email</label>
+                                    </div>
+    
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">icecream</i>
+                                        <input id="flavor" type="text" class="validate" required>
+                                        <label for="flavor">Favorite Ice Cream Flavour</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <div class="card-action">
+                            <button class="btn waves-effect waves-light" type="submit" form="userForm">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal(); 
+        });
+    </script>
+
+</body>
+</html>
