@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.6.3"
+  },
+  "name": "task",
+  "version": "1.0.0",
+  "main": "server_get.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+
+  
+}
+
+
